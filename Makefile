@@ -1,5 +1,5 @@
-NAME = phusion/baseimage
-VERSION = 0.9.11
+NAME = dkhroad/base
+VERSION = 0.2
 
 .PHONY: all build test tag_latest release ssh
 

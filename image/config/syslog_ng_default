@@ -9,4 +9,4 @@
 #CONSOLE_LOG_LEVEL=1
 
 # Command line options to syslog-ng
-SYSLOGNG_OPTS="--no-caps"
+SYSLOGNG_OPTS="--no-caps  --default-modules=affile,afprog,afsocket,afuser,basicfuncs,csvparser,dbparser,syslogformat"

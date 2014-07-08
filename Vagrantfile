@@ -27,7 +27,7 @@ su - vagrant -c 'echo alias d=docker >> ~/.bash_aliases'
 SCRIPT
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = 'phusion-open-ubuntu-14.04-amd64'
+  config.vm.box = 'hashicorp/precise64'
   config.vm.box_url = VAGRANT_BOX_URL
   config.ssh.forward_agent = true
   passenger_docker_path = File.absolute_path(PASSENGER_DOCKER_PATH, ROOT)
@@ -43,10 +43,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.synced_folder dockerizer_path, '/vagrant/dockerizer'
   end
 
-  config.vm.provider :vmware_fusion do |f, override|
-    override.vm.box_url = VMWARE_BOX_URL
-    f.vmx['displayName'] = 'baseimage-docker'
-  end
 
   if Dir.glob("#{File.dirname(__FILE__)}/.vagrant/machines/default/*/id").empty?
     config.vm.provision :shell, :inline => $script

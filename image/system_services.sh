@@ -39,6 +39,7 @@ mkdir /etc/service/sshd
 cp /build/runit/sshd /etc/service/sshd/run
 cp /build/config/sshd_config /etc/ssh/sshd_config
 cp /build/00_regen_ssh_host_keys.sh /etc/my_init.d/
+cp /build/01_add_ssh_keys.sh /etc/my_init.d/
 
 ## Install default SSH key for root and app.
 mkdir -p /root/.ssh
