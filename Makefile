@@ -1,12 +1,12 @@
 NAME = dkhroad/base
-VERSION = 0.2
+VERSION = ubuntu-12.04
 
 .PHONY: all build test tag_latest release ssh
 
 all: build
 
 build:
-	docker build -t $(NAME):$(VERSION) --rm image
+	docker build -t $(NAME):$(VERSION)  image
 
 test:
 	env NAME=$(NAME) VERSION=$(VERSION) ./test/runner.sh

@@ -26,6 +26,11 @@ test -f $ssh_dir/authorized_keys || touch $ssh_dir/authorized_keys
 # truncate the file, start from scratch
 : > $ssh_dir/authorized_keys
 
+# bail out if SSH_KEYS variable is missing
+if [ -z $SSH_KEYS ]; then 
+ exit 0
+fi
+
 # add the keys
 echo "Adding SSH keys to $ssh_dir/authorized_keys..."
 
